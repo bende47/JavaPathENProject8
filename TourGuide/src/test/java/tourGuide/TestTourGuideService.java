@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import gpsUtil.GpsUtil;
@@ -15,11 +14,9 @@ import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
 import rewardCentral.RewardCentral;
 import tourGuide.helper.InternalTestHelper;
-import tourGuide.service.GpsUtilService;
 import tourGuide.service.RewardsService;
 import tourGuide.service.TourGuideService;
 import tourGuide.user.User;
-import tripPricer.Provider;
 
 public class TestTourGuideService {
 
@@ -121,12 +118,28 @@ public class TestTourGuideService {
 		GpsUtil gpsUtil = new GpsUtil();
 		RewardsService rewardsService = new RewardsService(gpsUtil, new RewardCentral());
 		InternalTestHelper.setInternalUserNumber(0);
-		GpsUtilService gps = new GpsUtilService();
+		TourGuideService tourGuideService = new TourGuideService(gpsUtil, rewardsService);
 
-		List<Attraction> getAttractions = gps.getAttractions();
+		List<Attraction> getAttractions = tourGuideService.getAttractions();
 
 		assertTrue(getAttractions.size() > 0);
 
 	}
 
+	
+	@Test
+	public void submitLocationTest() {
+		Locale.setDefault(Locale.ENGLISH);
+		GpsUtil gpsUtil = new GpsUtil();
+		RewardsService rewardsService = new RewardsService(gpsUtil, new RewardCentral());
+		InternalTestHelper.setInternalUserNumber(0);
+		TourGuideService tourGuideService = new TourGuideService(gpsUtil, rewardsService);
+		User user = new User(UUID.randomUUID(), "jon", "000", "jon@tourGuide.com");
+
+		tourGuideService.submitLocation(user, tourGuideService);
+		
+		assertEquals("jon@tourGuide.com", user.getEmailAddress());
+	}
+	
+	
 }
