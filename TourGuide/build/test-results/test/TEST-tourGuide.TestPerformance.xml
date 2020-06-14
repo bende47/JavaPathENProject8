@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="1" errors="0" timestamp="2020-06-14T19:47:21" hostname="LAPTOP-COEISLMB" time="2.755">
+<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="1" errors="0" timestamp="2020-06-14T20:08:43" hostname="LAPTOP-COEISLMB" time="2.7">
   <properties/>
-  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="0.581">
-    <failure message="java.lang.NumberFormatException: For input string: &quot;73,406577&quot;" type="java.lang.NumberFormatException">java.lang.NumberFormatException: For input string: &quot;73,406577&quot;
+  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="0.537">
+    <failure message="java.lang.NumberFormatException: For input string: &quot;-64,837191&quot;" type="java.lang.NumberFormatException">java.lang.NumberFormatException: For input string: &quot;-64,837191&quot;
 	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
 	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
 	at java.lang.Double.parseDouble(Double.java:538)
 	at gpsUtil.GpsUtil.getUserLocation(GpsUtil.java:30)
-	at tourGuide.service.TourGuideService.trackUserLocation(TourGuideService.java:85)
+	at tourGuide.service.TourGuideService.trackUserLocation(TourGuideService.java:86)
 	at tourGuide.TestPerformance.highVolumeTrackLocation(TestPerformance.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -58,20 +58,20 @@
 	at java.lang.Thread.run(Thread.java:748)
 </failure>
   </testcase>
-  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="2.173"/>
-  <system-out><![CDATA[21:47:22.026 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-21:47:22.042 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-21:47:22.300 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
-21:47:22.301 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-21:47:22.317 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
-21:47:22.415 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-21:47:22.415 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-21:47:22.435 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
-21:47:22.436 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-21:47:22.438 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
+  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="2.162"/>
+  <system-out><![CDATA[22:08:43.932 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+22:08:43.942 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+22:08:44.194 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
+22:08:44.194 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+22:08:44.215 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
+22:08:44.297 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+22:08:44.297 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+22:08:44.314 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
+22:08:44.314 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+22:08:44.324 [pool-4-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
 highVolumeGetRewards: Time Elapsed: 2 seconds.
 ]]></system-out>
-  <system-err><![CDATA[juin 14, 2020 9:47:22 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
+  <system-err><![CDATA[juin 14, 2020 10:08:44 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
 INFOS: Using custom MathContext: precision=256, roundingMode=HALF_EVEN
 ]]></system-err>
 </testsuite>

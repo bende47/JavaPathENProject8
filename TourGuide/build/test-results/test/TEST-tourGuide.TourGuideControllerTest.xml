@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tourGuide.TourGuideControllerTest" tests="6" skipped="0" failures="4" errors="0" timestamp="2020-06-14T19:47:32" hostname="LAPTOP-COEISLMB" time="0.987">
+<testsuite name="tourGuide.TourGuideControllerTest" tests="6" skipped="0" failures="4" errors="0" timestamp="2020-06-14T20:08:54" hostname="LAPTOP-COEISLMB" time="0.961">
   <properties/>
-  <testcase name="getAllCurrentLocationsTest" classname="tourGuide.TourGuideControllerTest" time="0.878"/>
-  <testcase name="indexTest" classname="tourGuide.TourGuideControllerTest" time="0.017"/>
-  <testcase name="getNearbyAttractionsTest" classname="tourGuide.TourGuideControllerTest" time="0.033">
+  <testcase name="getAllCurrentLocationsTest" classname="tourGuide.TourGuideControllerTest" time="0.849"/>
+  <testcase name="indexTest" classname="tourGuide.TourGuideControllerTest" time="0.016"/>
+  <testcase name="getNearbyAttractionsTest" classname="tourGuide.TourGuideControllerTest" time="0.021">
     <failure message="org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException" type="org.springframework.web.util.NestedServletException">org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
@@ -83,7 +83,7 @@
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: java.lang.NullPointerException
-	at tourGuide.service.TourGuideService.getUserLocation(TourGuideService.java:62)
+	at tourGuide.service.TourGuideService.getUserLocation(TourGuideService.java:66)
 	at tourGuide.TourGuideController.getNearbyAttractions(TourGuideController.java:37)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -101,7 +101,7 @@ Caused by: java.lang.NullPointerException
 	... 76 more
 </failure>
   </testcase>
-  <testcase name="addUserPreferencesTest" classname="tourGuide.TourGuideControllerTest" time="0.014">
+  <testcase name="addUserPreferencesTest" classname="tourGuide.TourGuideControllerTest" time="0.01">
     <failure message="org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException" type="org.springframework.web.util.NestedServletException">org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
@@ -181,7 +181,7 @@ Caused by: java.lang.NullPointerException
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: java.lang.NullPointerException
-	at tourGuide.service.TourGuideService.addUserPreferences(TourGuideService.java:115)
+	at tourGuide.service.TourGuideService.addUserPreferences(TourGuideService.java:117)
 	at tourGuide.TourGuideController.addUserPreferences(TourGuideController.java:59)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -199,7 +199,7 @@ Caused by: java.lang.NullPointerException
 	... 76 more
 </failure>
   </testcase>
-  <testcase name="getRewardsTest" classname="tourGuide.TourGuideControllerTest" time="0.015">
+  <testcase name="getRewardsTest" classname="tourGuide.TourGuideControllerTest" time="0.034">
     <failure message="org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException" type="org.springframework.web.util.NestedServletException">org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
@@ -279,7 +279,7 @@ Caused by: java.lang.NullPointerException
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: java.lang.NullPointerException
-	at tourGuide.service.TourGuideService.getUserRewards(TourGuideService.java:58)
+	at tourGuide.service.TourGuideService.getUserRewards(TourGuideService.java:62)
 	at tourGuide.TourGuideController.getRewards(TourGuideController.java:43)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -297,7 +297,7 @@ Caused by: java.lang.NullPointerException
 	... 76 more
 </failure>
   </testcase>
-  <testcase name="getLocationTest" classname="tourGuide.TourGuideControllerTest" time="0.007">
+  <testcase name="getLocationTest" classname="tourGuide.TourGuideControllerTest" time="0.021">
     <failure message="org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException" type="org.springframework.web.util.NestedServletException">org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
@@ -377,7 +377,7 @@ Caused by: java.lang.NullPointerException
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.lang.Thread.run(Thread.java:748)
 Caused by: java.lang.NullPointerException
-	at tourGuide.service.TourGuideService.getUserLocation(TourGuideService.java:62)
+	at tourGuide.service.TourGuideService.getUserLocation(TourGuideService.java:66)
 	at tourGuide.TourGuideController.getLocation(TourGuideController.java:31)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -395,31 +395,31 @@ Caused by: java.lang.NullPointerException
 	... 76 more
 </failure>
   </testcase>
-  <system-out><![CDATA[21:47:25.120 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class tourGuide.TourGuideControllerTest]
-21:47:25.126 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-21:47:25.153 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-21:47:25.271 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [tourGuide.TourGuideControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-21:47:25.341 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [tourGuide.TourGuideControllerTest], using SpringBootContextLoader
-21:47:25.355 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [tourGuide.TourGuideControllerTest]: class path resource [tourGuide/TourGuideControllerTest-context.xml] does not exist
-21:47:25.356 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [tourGuide.TourGuideControllerTest]: class path resource [tourGuide/TourGuideControllerTestContext.groovy] does not exist
-21:47:25.357 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [tourGuide.TourGuideControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-21:47:25.360 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [tourGuide.TourGuideControllerTest]: TourGuideControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-21:47:25.537 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [tourGuide.TourGuideControllerTest]
-21:47:25.707 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\VAS TECNO\Documents\workspace-sts-3.9.11.RELEASE\JavaPathENProject8\TourGuide\build\classes\java\main\tourGuide\Application.class]
-21:47:25.737 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration tourGuide.Application for test class tourGuide.TourGuideControllerTest
-21:47:26.066 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [tourGuide.TourGuideControllerTest]: using defaults.
-21:47:26.069 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-21:47:26.129 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
-21:47:26.130 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
-21:47:26.131 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@49eef15c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1ce7be0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2a83bd07, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2d21bd9e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@13fbcd77, org.springframework.test.context.event.EventPublishingTestExecutionListener@6198b593, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@56444722, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@76a9cd39, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3b7426ee, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1f64383e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6b6d11a7]
-21:47:26.138 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tourGuide.TourGuideControllerTest]
-21:47:26.141 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tourGuide.TourGuideControllerTest]
-21:47:26.141 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tourGuide.TourGuideControllerTest]
-21:47:26.142 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tourGuide.TourGuideControllerTest]
-21:47:26.153 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1cd1d3d3 testClass = TourGuideControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@398e79ad testClass = TourGuideControllerTest, locations = '{}', classes = '{class tourGuide.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@523a00f3, [ImportsContextCustomizer@720617ca key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1d13c33f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@26b334d3, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@2748a1f7], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
-21:47:26.158 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tourGuide.TourGuideControllerTest]
-21:47:26.158 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tourGuide.TourGuideControllerTest]
-21:47:26.227 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+  <system-out><![CDATA[22:08:47.100 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class tourGuide.TourGuideControllerTest]
+22:08:47.108 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+22:08:47.135 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+22:08:47.250 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [tourGuide.TourGuideControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+22:08:47.344 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [tourGuide.TourGuideControllerTest], using SpringBootContextLoader
+22:08:47.358 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [tourGuide.TourGuideControllerTest]: class path resource [tourGuide/TourGuideControllerTest-context.xml] does not exist
+22:08:47.359 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [tourGuide.TourGuideControllerTest]: class path resource [tourGuide/TourGuideControllerTestContext.groovy] does not exist
+22:08:47.361 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [tourGuide.TourGuideControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+22:08:47.363 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [tourGuide.TourGuideControllerTest]: TourGuideControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:08:47.541 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [tourGuide.TourGuideControllerTest]
+22:08:47.725 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\VAS TECNO\Documents\workspace-sts-3.9.11.RELEASE\JavaPathENProject8\TourGuide\build\classes\java\main\tourGuide\Application.class]
+22:08:47.754 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration tourGuide.Application for test class tourGuide.TourGuideControllerTest
+22:08:48.092 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [tourGuide.TourGuideControllerTest]: using defaults.
+22:08:48.094 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+22:08:48.144 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+22:08:48.146 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+22:08:48.147 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3535bec7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2177d6a0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@288a2b40, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2f40e5a1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@379bb508, org.springframework.test.context.event.EventPublishingTestExecutionListener@28c6b78d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@51ef49fe, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@792ad38f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@13731a57, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@e14bd6b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@251fa5ee]
+22:08:48.154 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tourGuide.TourGuideControllerTest]
+22:08:48.156 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tourGuide.TourGuideControllerTest]
+22:08:48.156 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tourGuide.TourGuideControllerTest]
+22:08:48.157 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tourGuide.TourGuideControllerTest]
+22:08:48.169 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@5f86b2f2 testClass = TourGuideControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@1db12205 testClass = TourGuideControllerTest, locations = '{}', classes = '{class tourGuide.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@51c76bd2, [ImportsContextCustomizer@1dcd1857 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@39be0a96, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@42538f7e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3f8513f3], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+22:08:48.173 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tourGuide.TourGuideControllerTest]
+22:08:48.173 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tourGuide.TourGuideControllerTest]
+22:08:48.232 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -429,22 +429,22 @@ Caused by: java.lang.NullPointerException
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.2.6.RELEASE)
 
-2020-06-14 21:47:27.266  INFO 11152 --- [    Test worker] tourGuide.TourGuideControllerTest        : Starting TourGuideControllerTest on LAPTOP-COEISLMB with PID 11152 (started by VAS TECNO in C:\Users\VAS TECNO\Documents\workspace-sts-3.9.11.RELEASE\JavaPathENProject8\TourGuide)
-2020-06-14 21:47:27.268 DEBUG 11152 --- [    Test worker] tourGuide.TourGuideControllerTest        : Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
-2020-06-14 21:47:27.290  INFO 11152 --- [    Test worker] tourGuide.TourGuideControllerTest        : No active profile set, falling back to default profiles: default
-2020-06-14 21:47:30.428  INFO 11152 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
-2020-06-14 21:47:30.429 DEBUG 11152 --- [    Test worker] tourGuide.service.TourGuideService       : Initializing users
-2020-06-14 21:47:30.429 DEBUG 11152 --- [    Test worker] tourGuide.service.TourGuideService       : Created 0 internal test users.
-2020-06-14 21:47:30.429 DEBUG 11152 --- [    Test worker] tourGuide.service.TourGuideService       : Finished initializing users
-2020-06-14 21:47:30.430 DEBUG 11152 --- [ool-10-thread-1] tourGuide.tracker.Tracker                : Begin Tracker. Tracking 0 users.
-2020-06-14 21:47:30.431 DEBUG 11152 --- [ool-10-thread-1] tourGuide.tracker.Tracker                : Tracker Time Elapsed: 0 seconds.
-2020-06-14 21:47:30.431 DEBUG 11152 --- [ool-10-thread-1] tourGuide.tracker.Tracker                : Tracker sleeping
-2020-06-14 21:47:31.404  INFO 11152 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-14 21:47:32.411  INFO 11152 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2020-06-14 21:47:32.411  INFO 11152 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-06-14 21:47:32.439  INFO 11152 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-06-14 21:47:32.507  INFO 11152 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 96 ms
-2020-06-14 21:47:32.580  INFO 11152 --- [    Test worker] tourGuide.TourGuideControllerTest        : Started TourGuideControllerTest in 6.313 seconds (JVM running for 13.731)
+2020-06-14 22:08:49.239  INFO 18940 --- [    Test worker] tourGuide.TourGuideControllerTest        : Starting TourGuideControllerTest on LAPTOP-COEISLMB with PID 18940 (started by VAS TECNO in C:\Users\VAS TECNO\Documents\workspace-sts-3.9.11.RELEASE\JavaPathENProject8\TourGuide)
+2020-06-14 22:08:49.252 DEBUG 18940 --- [    Test worker] tourGuide.TourGuideControllerTest        : Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-06-14 22:08:49.255  INFO 18940 --- [    Test worker] tourGuide.TourGuideControllerTest        : No active profile set, falling back to default profiles: default
+2020-06-14 22:08:52.176  INFO 18940 --- [    Test worker] tourGuide.service.TourGuideService       : TestMode enabled
+2020-06-14 22:08:52.177 DEBUG 18940 --- [    Test worker] tourGuide.service.TourGuideService       : Initializing users
+2020-06-14 22:08:52.177 DEBUG 18940 --- [    Test worker] tourGuide.service.TourGuideService       : Created 0 internal test users.
+2020-06-14 22:08:52.177 DEBUG 18940 --- [    Test worker] tourGuide.service.TourGuideService       : Finished initializing users
+2020-06-14 22:08:52.178 DEBUG 18940 --- [ool-22-thread-1] tourGuide.tracker.Tracker                : Begin Tracker. Tracking 0 users.
+2020-06-14 22:08:52.179 DEBUG 18940 --- [ool-22-thread-1] tourGuide.tracker.Tracker                : Tracker Time Elapsed: 0 seconds.
+2020-06-14 22:08:52.180 DEBUG 18940 --- [ool-22-thread-1] tourGuide.tracker.Tracker                : Tracker sleeping
+2020-06-14 22:08:53.494  INFO 18940 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-14 22:08:54.523  INFO 18940 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-06-14 22:08:54.523  INFO 18940 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-06-14 22:08:54.543  INFO 18940 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-14 22:08:54.607  INFO 18940 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 84 ms
+2020-06-14 22:08:54.672  INFO 18940 --- [    Test worker] tourGuide.TourGuideControllerTest        : Started TourGuideControllerTest in 6.403 seconds (JVM running for 13.128)
 
 MockHttpServletRequest:
       HTTP Method = GET
