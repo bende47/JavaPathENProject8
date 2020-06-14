@@ -111,22 +111,7 @@ public class TestTourGuideService {
 
 		assertEquals(0, attractions.size());
 	}
-
-	@Test
-	public void getAttractionsTest() {
-		Locale.setDefault(Locale.ENGLISH);
-		GpsUtil gpsUtil = new GpsUtil();
-		RewardsService rewardsService = new RewardsService(gpsUtil, new RewardCentral());
-		InternalTestHelper.setInternalUserNumber(0);
-		TourGuideService tourGuideService = new TourGuideService(gpsUtil, rewardsService);
-
-		List<Attraction> getAttractions = tourGuideService.getAttractions();
-
-		assertTrue(getAttractions.size() > 0);
-
-	}
-
-	
+		
 	@Test
 	public void submitLocationTest() {
 		Locale.setDefault(Locale.ENGLISH);

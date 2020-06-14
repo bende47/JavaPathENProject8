@@ -28,13 +28,8 @@ public class TourGuideControllerTest {
 				.andDo(MockMvcResultHandlers.print())
 				.andExpect(status().isOk())
 				.andExpect(content().string("Greetings from TourGuide!"));
-	}
+	}	
 	
-	@Test
-	public void getLocationTest() throws Exception {
-		this.mvc.perform(MockMvcRequestBuilders.get("/getLocation").param("userName", "internalUser38"))
-				.andExpect(status().isOk());
-	}
 	
 	@Test
 	public void getNearbyAttractionsTest() throws Exception {

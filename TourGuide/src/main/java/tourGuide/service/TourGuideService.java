@@ -140,10 +140,7 @@ public class TourGuideService {
 		return userLocations;
 	}
 
-	public List<Attraction> getAttractions() {
-		return gpsUtil.getAttractions();
-	}
-
+	
 	public FiveNearestAttractions get5NearestAttractions(VisitedLocation visitedLocation) {
 		return rewardsService.get5nearestAttraction(visitedLocation);
 	}
