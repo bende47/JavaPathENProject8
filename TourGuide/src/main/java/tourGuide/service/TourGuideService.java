@@ -21,6 +21,7 @@ import gpsUtil.location.Attraction;
 import gpsUtil.location.Location;
 import gpsUtil.location.VisitedLocation;
 import tourGuide.entities.FiveNearestAttractions;
+import tourGuide.entities.UserLocation;
 import tourGuide.helper.InternalTestHelper;
 import tourGuide.tracker.Tracker;
 import tourGuide.user.User;
@@ -102,7 +103,21 @@ public class TourGuideService {
 		return nearbyAttractions;
 	}
 	
+
+   public List<UserLocation> getLocationOfAllUsers() {
+       List<UserLocation> userLocations = new ArrayList<>();
+       for (User user : getAllUsers()) {
+    	   UserLocation userLocation = new UserLocation();
+           userLocation.setUserID(user.getUserId());
+           userLocation.setLatLongUser((user.getVisitedLocations().size() > 0) ?
+                   user.getLastVisitedLocation().location :
+                   null);
+           userLocations.add(userLocation);
+       }
+       return userLocations;
+   }
 	
+	   
 	public FiveNearestAttractions get5NearestAttractions(VisitedLocation visitedLocation) {
         return rewardsService.get5nearestAttraction(visitedLocation);
     }
