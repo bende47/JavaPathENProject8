@@ -40,7 +40,7 @@ public class TourGuideController {
         return tourGuideService.get5NearestAttractions(visitedLocation);
     }
     
-    @RequestMapping("/getRewards") 
+    @GetMapping("/getRewards")
     public String getRewards(@RequestParam String userName) {
         return JsonStream.serialize(tourGuideService.getUserRewards(getUser(userName)));
     }
@@ -48,13 +48,8 @@ public class TourGuideController {
     @GetMapping("/getAllCurrentLocations")
     public List<UserLocation> getAllCurrentLocations() {
        return tourGuideService.getLocationOfAllUsers();
-    }
-    
-    @RequestMapping("/getTripDeals")
-    public String getTripDeals(@RequestParam String userName) {
-    	List<Provider> providers = tourGuideService.getTripDeals(getUser(userName));
-    	return JsonStream.serialize(providers);
-    }
+    }    
+
     
     private User getUser(String userName) {
     	return tourGuideService.getUser(userName);
