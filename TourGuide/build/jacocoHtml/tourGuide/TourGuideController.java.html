@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TourGuideController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TourGuide</a> &gt; <a href="index.source.html" class="el_package">tourGuide</a> &gt; <span class="el_source">TourGuideController.java</span></div><h1>TourGuideController.java</h1><pre class="source lang-java linenums">package tourGuide;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.jsoniter.output.JsonStream;
+
+import gpsUtil.location.VisitedLocation;
+import tourGuide.entities.FiveNearestAttractions;
+import tourGuide.entities.UserLocation;
+import tourGuide.service.TourGuideService;
+import tourGuide.user.User;
+
+@RestController
+<span class="fc" id="L19">public class TourGuideController {</span>
+
+	@Autowired
+	TourGuideService tourGuideService;
+	
+	@GetMapping(&quot;/&quot;)
+    public String index() {
+<span class="fc" id="L26">        return &quot;Greetings from TourGuide!&quot;;</span>
+    }
+
+    @GetMapping(value=&quot;/getLocation&quot;)
+    public String getLocation(@RequestParam String userName) {
+<span class="nc" id="L31">        VisitedLocation visitedLocation = tourGuideService.getUserLocation(getUser(userName));</span>
+<span class="nc" id="L32">        return JsonStream.serialize(visitedLocation.location);</span>
+    }
+   
+    @GetMapping(value=&quot;/getNearbyAttractions&quot;)
+    public FiveNearestAttractions getNearbyAttractions(@RequestParam String userName) {
+<span class="nc" id="L37">        VisitedLocation visitedLocation = tourGuideService.getUserLocation(getUser(userName));</span>
+<span class="nc" id="L38">        return tourGuideService.get5NearestAttractions(visitedLocation);</span>
+    }
+    
+    @GetMapping(&quot;/getRewards&quot;)
+    public String getRewards(@RequestParam String userName) {
+<span class="nc" id="L43">        return JsonStream.serialize(tourGuideService.getUserRewards(getUser(userName)));</span>
+    }
+    
+    @GetMapping(&quot;/addUserPreferences&quot;)
+    public User addUserPreferences(
+            @RequestParam String userName,
+            @RequestParam Integer numberOfAdults,
+            @RequestParam Integer numberOfChildren,
+            @RequestParam Integer tripDuration,
+            @RequestParam Integer highPricePoint,
+            @RequestParam Integer lowerPricePoint
+    ) {
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">        if (highPricePoint == 0) {</span>
+<span class="nc" id="L56">            highPricePoint = 999_999;</span>
+        }
+   
+<span class="nc" id="L59">        User userPreferences =  tourGuideService.addUserPreferences(userName, numberOfAdults, numberOfChildren, tripDuration, highPricePoint, lowerPricePoint);</span>
+<span class="nc" id="L60">        return userPreferences;</span>
+    }
+    
+    @GetMapping(&quot;/getAllCurrentLocations&quot;)
+    public List&lt;UserLocation&gt; getAllCurrentLocations() {
+<span class="fc" id="L65">       return tourGuideService.getLocationOfAllUsers();</span>
+    }    
+
+    
+    private User getUser(String userName) {
+<span class="fc" id="L70">    	return tourGuideService.getUser(userName);</span>
+    }
+   
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
