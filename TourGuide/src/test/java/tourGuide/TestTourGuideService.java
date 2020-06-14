@@ -116,7 +116,7 @@ public class TestTourGuideService {
 	}
 
 	@Test
-	public void getAttractions() {
+	public void getAttractionsTest() {
 		Locale.setDefault(Locale.ENGLISH);
 		GpsUtil gpsUtil = new GpsUtil();
 		RewardsService rewardsService = new RewardsService(gpsUtil, new RewardCentral());
