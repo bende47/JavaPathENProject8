@@ -20,6 +20,7 @@ import gpsUtil.GpsUtil;
 import gpsUtil.location.Attraction;
 import gpsUtil.location.Location;
 import gpsUtil.location.VisitedLocation;
+import tourGuide.entities.FiveNearestAttractions;
 import tourGuide.helper.InternalTestHelper;
 import tourGuide.tracker.Tracker;
 import tourGuide.user.User;
@@ -100,6 +101,11 @@ public class TourGuideService {
 		
 		return nearbyAttractions;
 	}
+	
+	
+	public FiveNearestAttractions get5NearestAttractions(VisitedLocation visitedLocation) {
+        return rewardsService.get5nearestAttraction(visitedLocation);
+    }
 	
 	private void addShutDownHook() {
 		Runtime.getRuntime().addShutdownHook(new Thread() { 

@@ -1,7 +1,6 @@
 package tourGuide.service;
 
-import java.util.List;
-
+import java.util.*;
 import org.springframework.stereotype.Service;
 
 import gpsUtil.GpsUtil;
@@ -9,6 +8,7 @@ import gpsUtil.location.Attraction;
 import gpsUtil.location.Location;
 import gpsUtil.location.VisitedLocation;
 import rewardCentral.RewardCentral;
+import tourGuide.entities.FiveNearestAttractions;
 import tourGuide.user.User;
 import tourGuide.user.UserReward;
 
@@ -50,6 +50,39 @@ public class RewardsService {
 			}
 		}
 	}
+	
+	public FiveNearestAttractions get5nearestAttraction(VisitedLocation visitedLocation) {
+		Map<Double, Attraction> attractionsByDistance = new TreeMap<>();
+		FiveNearestAttractions fiveNearestAttractions = new FiveNearestAttractions();
+		List<String> attractionsName = new ArrayList<>();
+		List<Location> attractionsLocation = new ArrayList<>();
+		List<Double> attractionsDistance = new ArrayList<>();
+		List<Integer> attractionsRewardPoints = new ArrayList<>();
+		int gatheredReward = 0;
+		for (Attraction attraction : gpsUtil.getAttractions()) {
+			attractionsByDistance.put(getDistance(attraction, visitedLocation.location), attraction);
+		}
+
+		attractionsByDistance.forEach((distance, attraction) -> {
+			if (attractionsName.size() < 5) {
+				attractionsName.add(attraction.attractionName);
+				attractionsLocation.add(new Location(attraction.longitude, attraction.latitude));
+				attractionsDistance.add(getDistance(attraction, visitedLocation.location));
+				attractionsRewardPoints
+						.add(rewardsCentral.getAttractionRewardPoints(attraction.attractionId, visitedLocation.userId));
+			}
+		});
+		fiveNearestAttractions.setAttractionName(attractionsName);
+		fiveNearestAttractions.setLatLongUser(visitedLocation.location);
+		fiveNearestAttractions.setLatLongAttraction(attractionsLocation);
+		fiveNearestAttractions.setDistance(attractionsDistance);
+		for (Integer rewardPoints : attractionsRewardPoints) {
+			gatheredReward += rewardPoints;
+		}
+		fiveNearestAttractions.setAttractionRewardPoints(gatheredReward);
+		return fiveNearestAttractions;
+	}
+
 	
 	public boolean isWithinAttractionProximity(Attraction attraction, Location location) {
 		return getDistance(attraction, location) > attractionProximityRange ? false : true;
