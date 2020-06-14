@@ -37,7 +37,6 @@ public class TourGuideService {
 	private Logger logger = LoggerFactory.getLogger(TourGuideService.class);
 	private final GpsUtil gpsUtil;
 	private final RewardsService rewardsService;
-	private final TripPricer tripPricer = new TripPricer();
 	public final Tracker tracker;
 	boolean testMode = true;
 	
@@ -80,13 +79,7 @@ public class TourGuideService {
 		}
 	}
 	
-	public List<Provider> getTripDeals(User user) {
-		int cumulatativeRewardPoints = user.getUserRewards().stream().mapToInt(i -> i.getRewardPoints()).sum();
-		List<Provider> providers = tripPricer.getPrice(tripPricerApiKey, user.getUserId(), user.getUserPreferences().getNumberOfAdults(), 
-				user.getUserPreferences().getNumberOfChildren(), user.getUserPreferences().getTripDuration(), cumulatativeRewardPoints);
-		user.setTripDeals(providers);
-		return providers;
-	}
+	
 	
 	public VisitedLocation trackUserLocation(User user) {
 		VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
@@ -106,7 +99,11 @@ public class TourGuideService {
 		return nearbyAttractions;
 	}
 	
-	
+	public void finalizeLocation(User user, VisitedLocation visitedLocation) {
+		user.addToVisitedLocations(visitedLocation);
+		rewardsService.calculateRewards(user);
+		tracker.finalizeTrack(user);
+	}
 	
 	 public User addUserPreferences(String userName, Integer numberOfAdults, Integer numberOfChildren, Integer tripDuration, Integer highPricePoint, Integer lowerPricePoint) {
 	        UserPreferences userPreferences = new UserPreferences();
