@@ -45,6 +45,23 @@ public class TourGuideController {
         return JsonStream.serialize(tourGuideService.getUserRewards(getUser(userName)));
     }
     
+    @GetMapping("/addUserPreferences")
+    public User addUserPreferences(
+            @RequestParam String userName,
+            @RequestParam Integer numberOfAdults,
+            @RequestParam Integer numberOfChildren,
+            @RequestParam Integer tripDuration,
+            @RequestParam Integer highPricePoint,
+            @RequestParam Integer lowerPricePoint
+    ) {
+        if (highPricePoint == 0) {
+            highPricePoint = 999_999;
+        }
+   
+        User userPreferences =  tourGuideService.addUserPreferences(userName, numberOfAdults, numberOfChildren, tripDuration, highPricePoint, lowerPricePoint);
+        return userPreferences;
+    }
+    
     @GetMapping("/getAllCurrentLocations")
     public List<UserLocation> getAllCurrentLocations() {
        return tourGuideService.getLocationOfAllUsers();

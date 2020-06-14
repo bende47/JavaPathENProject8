@@ -11,7 +11,9 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import javax.money.Monetary;
 
+import org.javamoney.moneta.Money;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -25,6 +27,7 @@ import tourGuide.entities.UserLocation;
 import tourGuide.helper.InternalTestHelper;
 import tourGuide.tracker.Tracker;
 import tourGuide.user.User;
+import tourGuide.user.UserPreferences;
 import tourGuide.user.UserReward;
 import tripPricer.Provider;
 import tripPricer.TripPricer;
@@ -103,7 +106,22 @@ public class TourGuideService {
 		return nearbyAttractions;
 	}
 	
-
+	
+	
+	 public User addUserPreferences(String userName, Integer numberOfAdults, Integer numberOfChildren, Integer tripDuration, Integer highPricePoint, Integer lowerPricePoint) {
+	        UserPreferences userPreferences = new UserPreferences();
+	        userPreferences.setNumberOfAdults(numberOfAdults);
+	        userPreferences.setNumberOfChildren(numberOfChildren);
+	        userPreferences.setTripDuration(tripDuration);
+	        userPreferences.setHighPricePoint(Money.of(highPricePoint, Monetary.getCurrency("USD")));
+	        User user= getUser(userName);
+	        user.setUserPreferences(userPreferences);
+	        internalUserMap.put(userName, user);
+	        return user;
+	        
+	}
+	   	
+	 
    public List<UserLocation> getLocationOfAllUsers() {
        List<UserLocation> userLocations = new ArrayList<>();
        for (User user : getAllUsers()) {
