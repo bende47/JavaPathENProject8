@@ -32,6 +32,11 @@ https://marketplace.eclipse.org/content/gradle-ide-pack
 - Importer chacun des services dans un IDE de votre choix. 
 - Faire un Clique droit sur le projet -> Run as -> Spring boot App
 
+## Docker
+- Creation d'image : docker build -t nomImage . (Ex: docker build -t tourguidegps .)
+- Lancement de l'application : docker run -p porthote:portcontainer nomImage (docker run -p 8090:8090 tourguidegps)
+- Lister les images créées : docker image ls
+- Lister les conteneurs: docker container ls
 
 ### Build jar
 
